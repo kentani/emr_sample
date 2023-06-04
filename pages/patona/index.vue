@@ -1,34 +1,52 @@
 <template>
   <div>
-    TOP
+    <v-row
+      no-gutters
+      justify="center"
+      class="mt-12"
+      style="height: 100%; width: 100%;"
+    >
+      <v-col
+        v-for="func in functionList"
+        :key="func.icon"
+        cols="9"
+        md="3"
+        lg="2"
+        class="mx-2"
+      >
+        <v-hover>
+          <template v-slot:default="{ hover }">
+            <v-card
+              color="main"
+              dark
+              rounded="xl"
+              :elevation="hover ? 24 : 8"
+              @click="onClickMenu(func.to)"
+            >
+              <v-card-text class="text-body-1 font-weight-bold text-center">
+                <v-icon size="150">{{ func.icon }}</v-icon>
+                <p class="mb-0">{{ func.name }}</p>
+              </v-card-text>
+            </v-card>
+          </template>
+        </v-hover>
+      </v-col>
+    </v-row>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'PatonaIndexPage',
-  layout: 'patona-default',
+  name: 'PatonaTopPage',
+  layout: 'PatonaDefaultLayout',
   data: () => ({
-    week: ['月', '火', '水', '木', '金', '土', '日'],
-    dates: [[1,2,3,4,5,6,7],[1,2,3,4,5,6,7],[1,2,3,4,5,6,7],[1,2,3,4,5,6,7],[1,2,3,4,5,6,7]],
-    menus: [
-      { id: 1, name: 'メニュー1', kg: '20' },
-      { id: 2, name: 'メニュー2', kg: '20' },
-      { id: 3, name: 'メニュー3', kg: '20' },
-    ],
-    date: 0,
-    currentMonth: 'YYYY年 M月',
+    functionList: [
+      { 'name': '企業ページ', 'to': '/patona/gyms/1/menu', 'icon': 'mdi-domain' },
+    ]
   }),
   methods: {
-    incrementDate() {
-      this.date = this.date + 1;
-      return this.date;
-    },
-    onClickPrevWeek() {
-
-    },
-    onClickNextWeek() {
-
+    onClickMenu(to) {
+      this.$router.push(to);
     }
   }
 }
