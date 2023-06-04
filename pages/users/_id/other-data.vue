@@ -5,6 +5,7 @@
 <script>
 export default {
   name: 'OtherDataPage',
+  layout: 'users',
 }
 </script>
 

@@ -41,7 +41,7 @@ export default {
   layout: 'PatonaDefaultLayout',
   data: () => ({
     functionList: [
-      { 'name': '企業ページ', 'to': '/patona/gyms/1/menu', 'icon': 'mdi-domain' },
+      { 'name': '企業ページ', 'to': '/gyms/1/menu', 'icon': 'mdi-domain' },
     ]
   }),
   methods: {

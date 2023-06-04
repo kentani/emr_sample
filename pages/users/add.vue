@@ -59,6 +59,7 @@
 <script>
 export default {
   name: 'UserAddPage',
+  layout: 'users',
   data: () => ({
     step: 1,
     tabList: {

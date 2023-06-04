@@ -197,6 +197,7 @@
 <script>
 export default {
   name: 'UserAddPage',
+  layout: 'users',
   data: () => ({
     userImage: require('@/assets/images/user.png'),
     isComplete: false,

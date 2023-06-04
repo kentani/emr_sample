@@ -150,6 +150,7 @@
 <script>
 export default {
   name: 'PersonalDataPage',
+  layout: 'users',
   data: () => ({
     userImage: require('@/assets/images/user.png'),
     userAge: 30,

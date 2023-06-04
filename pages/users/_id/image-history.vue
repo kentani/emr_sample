@@ -88,6 +88,7 @@
 <script>
 export default {
   name: 'ImageHistoryPage',
+  layout: 'users',
   data: () => ({
     userImage: require('@/assets/images/user.png'),
     imageList: {

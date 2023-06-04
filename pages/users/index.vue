@@ -74,6 +74,7 @@
 <script>
 export default {
   name: 'UsersPage',
+  layout: 'users',
   data: () => ({
     userList: {
       '1': { 'id': 1, 'name': 'ユーザー1', 'sex': '男性', 'age': 20 },

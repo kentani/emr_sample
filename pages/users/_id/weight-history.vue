@@ -169,6 +169,7 @@ import LineChart from "@/components/chart/LineChart.vue";
 
 export default {
   name: 'WeightHistoryPage',
+  layout: 'users',
   components: { LineChart },
   data: () => ({
     options: {

@@ -258,6 +258,7 @@ import moment from "moment";
 
 export default {
   name: 'TrainingHistoryPage',
+  layout: 'users',
   data: () => ({
     value: moment().format(),
     locale: 'ja-jp',

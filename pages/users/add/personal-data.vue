@@ -152,6 +152,7 @@
 <script>
 export default {
   name: 'AddPersonalDataPage',
+  layout: 'users',
   data: () => ({
     userImage: require('@/assets/images/user.png'),
   }),
