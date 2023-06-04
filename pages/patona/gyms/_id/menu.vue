@@ -17,12 +17,11 @@
         <v-hover>
           <template v-slot:default="{ hover }">
             <v-card
-              color="#262626"
+              color="main"
               dark
               rounded="xl"
-              :elevation="hover? 24 : 8"
-              nuxt
-              :to="func.to"
+              :elevation="hover ? 24 : 8"
+              @click="onClickMenu(func.to)"
             >
               <v-card-text class="text-body-1 font-weight-bold text-center">
                 <v-icon size="150">{{ func.icon }}</v-icon>
@@ -38,11 +37,18 @@
 
 <script>
 export default {
-  name: 'IndexPage',
+  name: 'PatonaMenuPage',
+  layout: 'PatonaDefaultLayout',
   data: () => ({
     functionList: [
-      { 'name': '顧客一覧', 'to': '/users', 'icon': 'mdi-account-group' }
+      { 'name': '顧客一覧', 'to': '/patona/gyms/1/members', 'icon': 'mdi-account-group' },
+      { 'name': '設定', 'to': '/patona/gyms/1/setting', 'icon': 'mdi-cog' },
     ]
-  })
+  }),
+  methods: {
+    onClickMenu(to) {
+      this.$router.push(to);
+    }
+  }
 }
 </script>

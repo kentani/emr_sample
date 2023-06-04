@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[18],{589:function(n,t,e){"use strict";e.r(t);var o={name:"PatonaCompaniesPage",layout:"PatonaDefaultLayout",data:function(){return{}},methods:{}},c=e(65),component=Object(c.a)(o,(function(){return(0,this._self._c)("div",[this._v("\n  ジム一覧\n")])}),[],!1,null,"99903c36",null);t.default=component.exports}}]);
