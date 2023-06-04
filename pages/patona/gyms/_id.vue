@@ -5,7 +5,7 @@
 <script>
 export default {
   name: 'PatonaCompaniesPage',
-  layout: 'patona-members',
+  layout: 'PatonaDefaultLayout',
   data: () => ({
   }),
   methods: {

@@ -42,15 +42,13 @@
 
       <v-col cols="12" sm="8" md="9">
         <transition-group
-          ref="memberList"
           tag="v-row"
           name="list"
-          class="member-list"
+          class="d-flex"
         >
           <v-col
             v-for="member in members"
             :key="member.id"
-            :ref="`memberCard${member.id}`"
             v-show="member.show2"
             cols="6"
             sm="4"
@@ -60,7 +58,6 @@
             <v-card
               hover
               rounded="lg"
-              :height="height"
               @click="onClickMemberCard(member)"
             >
               <v-img
