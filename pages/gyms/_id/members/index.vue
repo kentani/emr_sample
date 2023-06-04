@@ -44,7 +44,6 @@
         <transition-group
           tag="v-row"
           name="list"
-          class="d-flex"
         >
           <v-col
             v-for="member in members"
