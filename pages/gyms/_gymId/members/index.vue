@@ -43,8 +43,9 @@
       <v-col cols="12" sm="8" md="9">
         <v-container class="pa-0">
           <transition-group
-            tag="v-row"
+            tag="div"
             name="list"
+            class="row"
           >
             <v-col
               v-for="member in members"
