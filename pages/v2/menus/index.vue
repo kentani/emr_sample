@@ -1,18 +1,17 @@
 <template>
-  <div>
-    <v-row
-      no-gutters
-      justify="center"
-      class="mt-12"
-      style="height: 100%; width: 100%;"
+  <v-container>
+    <transition-group
+      tag="div"
+      name="list"
+      class="row justify-center"
     >
       <v-col
-        v-for="func in functionList"
-        :key="func.icon"
-        cols="9"
+        v-for="menu in menus"
+        :key="menu.icon"
+        v-show="menu.show"
+        cols="8"
+        sm="4"
         md="3"
-        lg="2"
-        class="mx-2"
       >
         <v-hover>
           <template v-slot:default="{ hover }">
@@ -21,18 +20,18 @@
               dark
               rounded="xl"
               :elevation="hover ? 24 : 8"
-              @click="onClickMenu(func.to)"
+              @click="onClickMenu(menu.to)"
             >
               <v-card-text class="text-body-1 font-weight-bold text-center">
-                <v-icon size="150">{{ func.icon }}</v-icon>
-                <p class="mb-0">{{ func.name }}</p>
+                <v-icon size="150">{{ menu.icon }}</v-icon>
+                <p class="mb-0">{{ menu.name }}</p>
               </v-card-text>
             </v-card>
           </template>
         </v-hover>
       </v-col>
-    </v-row>
-  </div>
+    </transition-group>
+  </v-container>
 </template>
 
 <script>
@@ -40,11 +39,19 @@ export default {
   name: 'PatonaMenuPage',
   layout: 'default',
   data: () => ({
-    functionList: [
-      { 'name': '顧客一覧', 'to': '/v2/members', 'icon': 'mdi-account-group' },
-      { 'name': '設定', 'to': '/v2/settings/training', 'icon': 'mdi-cog' },
+    menus: [
+      { 'name': '顧客一覧', 'to': '/v2/members', 'icon': 'mdi-account-group', show: false },
+      { 'name': '設定', 'to': '/v2/settings/training', 'icon': 'mdi-cog', show: false },
     ]
   }),
+  mounted() {
+    this.menus = this.menus.map(menu => {
+      return {
+        ...menu,
+        show: true,
+      }
+    });
+  },
   methods: {
     onClickMenu(to) {
       this.$router.push(to);
@@ -52,3 +59,27 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.list-leave-active,
+.list-enter-active,
+.list-move {
+  transition: 500ms cubic-bezier(0.59, 0.12, 0.34, 0.95);
+  transition-property: opacity, transform;
+}
+
+.list-enter {
+  opacity: 0;
+  transform: translateX(0) scaleY(0);
+}
+
+.list-enter-to {
+  opacity: 1;
+  transform: translateX(0) scaleY(1);
+}
+
+.list-leave-to {
+  opacity: 0;
+  transform: translateX(0) scaleY(0);
+}
+</style>

@@ -41,44 +41,43 @@
       </v-col>
 
       <v-col cols="12" sm="8" md="9">
-        <v-container class="pa-0">
-          <transition-group
-            tag="div"
-            name="list"
-            class="row"
+        <transition-group
+          tag="div"
+          name="list"
+          class="row"
+        >
+          <v-col
+            v-for="(member, index) in members"
+            :key="member.id"
+            v-show="member.show2"
+            cols="6"
+            sm="4"
+            md="3"
+            :style="{ 'transition-delay': `${index * 0.3}s` }"
           >
-            <v-col
-              v-for="member in members"
-              :key="member.id"
-              v-show="member.show2"
-              cols="6"
-              sm="4"
-              md="3"
+
+            <v-card
+              hover
+              rounded="lg"
+              @click="onClickMemberCard(member)"
             >
+              <v-img
+                height="140"
+                position="top center"
+                src="https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairShortCurly&accessoriesType=Prescription02&hairColor=Black&facialHairType=Blank&clotheType=Hoodie&clotheColor=White&eyeType=Default&eyebrowType=DefaultNatural&mouthType=Default&skinColor=Light"
+              ></v-img>
 
-              <v-card
-                hover
-                rounded="lg"
-                @click="onClickMemberCard(member)"
-              >
-                <v-img
-                  height="140"
-                  position="top center"
-                  src="https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairShortCurly&accessoriesType=Prescription02&hairColor=Black&facialHairType=Blank&clotheType=Hoodie&clotheColor=White&eyeType=Default&eyebrowType=DefaultNatural&mouthType=Default&skinColor=Light"
-                ></v-img>
+              <v-card-title class="py-2">
+                <span class="text-body-1 font-weight-bold">{{ member.name }}</span>
+              </v-card-title>
 
-                <v-card-title class="py-2">
-                  <span class="text-body-1 font-weight-bold">{{ member.name }}</span>
-                </v-card-title>
-
-                <v-card-text class="pb-2">
-                  <span class="text-body-2">担当:</span>
-                  <span class="text-body-2">{{ member.instructor }}</span>
-                </v-card-text>
-              </v-card>
-            </v-col>
-          </transition-group>
-        </v-container>
+              <v-card-text class="pb-2">
+                <span class="text-body-2">担当:</span>
+                <span class="text-body-2">{{ member.instructor }}</span>
+              </v-card-text>
+            </v-card>
+          </v-col>
+        </transition-group>
       </v-col>
     </v-row>
   </v-container>
@@ -201,10 +200,6 @@ export default {
 </script>
 
 <style scoped>
-.member-list::-webkit-scrollbar {
-  display: none;
-}
-
 .list-leave-active,
 .list-enter-active,
 .list-move {
