@@ -42,7 +42,7 @@ export default {
   data: () => ({
     functionList: [
       { 'name': '顧客一覧', 'to': '/gyms/1/members', 'icon': 'mdi-account-group' },
-      { 'name': '設定', 'to': '/gyms/1/setting', 'icon': 'mdi-cog' },
+      { 'name': '設定', 'to': '/gyms/1/settings/training', 'icon': 'mdi-cog' },
     ]
   }),
   methods: {

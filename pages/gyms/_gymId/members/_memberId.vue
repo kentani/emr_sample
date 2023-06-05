@@ -19,6 +19,7 @@
                 v-for="tab in tabList"
                 :key="tab.id"
                 cols="6"
+                md="3"
                 lg="12"
               >
                 <v-btn

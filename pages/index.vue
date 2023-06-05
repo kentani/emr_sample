@@ -41,7 +41,7 @@ export default {
   layout: 'DefaultLayout',
   data: () => ({
     functionList: [
-      { 'name': '新デザイン', 'to': '/gyms/1/menu', 'icon': 'mdi-apps' },
+      { 'name': '新デザイン', 'to': '/emr_sample/gyms/1/menu', 'icon': 'mdi-apps' },
       { 'name': '旧デザイン', 'to': '/users', 'icon': 'mdi-account-group' },
     ]
   }),

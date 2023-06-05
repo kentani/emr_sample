@@ -13,6 +13,19 @@
 
       <v-spacer />
 
+      <div>{{ gymName }}</div>
+
+      <div class="mx-2">|</div>
+
+      <div class="mr-3">{{ trainerName }}</div>
+
+      <!-- <v-avatar size="40">
+        <img
+          src="https://cdn.vuetifyjs.com/images/john.jpg"
+          alt="John"
+        >
+      </v-avatar> -->
+
       <v-btn
         icon
         @click="onClickMenu"
@@ -30,6 +43,8 @@
 export default {
   data: () => ({
     title: 'PATONA',
+    gymName: 'マッスルジム',
+    trainerName: 'トレーナー',
   }),
   methods: {
     onClickMenu() {
