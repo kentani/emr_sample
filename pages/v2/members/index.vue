@@ -100,12 +100,12 @@ export default {
       {
         text: 'メニュー',
         disabled: false,
-        href: '/v2/menus',
+        href: '/emr_sample/v2/menus',
       },
       {
         text: '顧客一覧',
         disabled: true,
-        href: '/v2/members',
+        href: '/emr_sample/v2/members',
       },
     ]
   }),
