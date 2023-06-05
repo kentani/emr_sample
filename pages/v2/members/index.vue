@@ -49,11 +49,11 @@
           <v-col
             v-for="(member, index) in members"
             :key="member.id"
+            :ref="`memberCard${member.id}`"
             v-show="member.show2"
             cols="6"
             sm="4"
             md="3"
-            :style="{ 'transition-delay': `${index * 0.3}s` }"
           >
 
             <v-card
@@ -89,7 +89,7 @@ export default {
   layout: 'default',
   data: () => ({
     userImage: require('@/assets/images/user.png'),
-    members: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15].map(num => ({ id: num, name: '顧客 太郎', instructor: 'トレーナー', show: false, show2: false, selected: false })),
+    members: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15].map(num => ({ id: num, name: `顧客 ${num}`, instructor: 'トレーナー', show: false, show2: false, selected: false })),
     membersSnap: [],
     management: [2,5,7,10,11,14,15],
     switch1: false,
@@ -118,15 +118,27 @@ export default {
     });
 
     this.membersSnap = this.members.map(member => ({...member}));
+
+    let el;
+    this.members.forEach((member, index) => {
+      el = this.$refs[`memberCard${member.id}`][0];
+      el.style.transitionDelay = `${index * 0.1}s`;
+    });
   },
   methods: {
     async onSearch() {
+      let members = this.membersSnap.map(member => ({...member}));
+
+      let el;
+        members.forEach((member, _) => {
+        el = this.$refs[`memberCard${member.id}`][0];
+        el.style.transitionDelay ='0s';
+      });
+
       if (this.searchName.length === 0 && !this.switch1) {
-        this.members = this.membersSnap.map(member => ({...member}));
+        this.members = members;
         return;
       }
-
-      let members = this.membersSnap.map(member => ({...member}));
 
       if (this.searchName.length > 0) {
         members = members.map(member => {
