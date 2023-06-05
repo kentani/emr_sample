@@ -101,12 +101,12 @@ export default {
     {
         text: 'メニュー',
         disabled: false,
-        href: '/emr_sample/gyms/1/menu',
+        href: '/emr_sample/v2/menus',
       },
       {
         text: '設定',
         disabled: true,
-        href: '/emr_sample/gyms/1/settings/training',
+        href: '/emr_sample/v2/settings/training',
       },
     ],
   }),
@@ -141,7 +141,7 @@ export default {
 
       this.tabList = Object.assign({}, this.tabList);
 
-      this.$router.push(`/gyms/1/settings/${this.tabList[tabID].to}`);
+      this.$router.push(`/v2/settings/${this.tabList[tabID].to}`);
     },
   }
 }

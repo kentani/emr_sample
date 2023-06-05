@@ -41,8 +41,8 @@ export default {
   layout: 'default',
   data: () => ({
     functionList: [
-      { 'name': '新デザイン', 'to': '/v2/menus', 'icon': 'mdi-apps' },
-      { 'name': '旧デザイン', 'to': '/v1', 'icon': 'mdi-apps' },
+      { 'name': '顧客一覧', 'to': '/v2/members', 'icon': 'mdi-account-group' },
+      { 'name': '設定', 'to': '/v2/settings/training', 'icon': 'mdi-cog' },
     ]
   }),
   methods: {

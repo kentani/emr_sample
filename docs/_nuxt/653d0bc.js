@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[25],{606:function(e,t,n){"use strict";n.r(t);var o={name:"OtherDataPage",layout:"users"},r=n(59),component=Object(r.a)(o,(function(){return(0,this._self._c)("p",[this._v("目的・目標")])}),[],!1,null,"41d39e4b",null);t.default=component.exports}}]);

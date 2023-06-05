@@ -17,7 +17,7 @@
         <v-hover>
           <template v-slot:default="{ hover }">
             <v-card
-              color="main"
+              color="black"
               dark
               rounded="xl"
               :elevation="hover ? 24 : 8"
@@ -38,11 +38,10 @@
 <script>
 export default {
   name: 'PatonaMenuPage',
-  layout: 'default',
+  layout: 'users',
   data: () => ({
     functionList: [
-      { 'name': '新デザイン', 'to': '/v2/menus', 'icon': 'mdi-apps' },
-      { 'name': '旧デザイン', 'to': '/v1', 'icon': 'mdi-apps' },
+      { 'name': '顧客一覧', 'to': '/v1/users', 'icon': 'mdi-account-group' },
     ]
   }),
   methods: {
