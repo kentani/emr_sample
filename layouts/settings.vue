@@ -94,8 +94,8 @@ export default {
     tabList: {
       1: { id: 1, name: '会社情報', to: 'gym', active: false, disabled: true },
       2: { id: 2, name: 'トレーナー権限', to: 'role', active: false, disabled: true  },
-      3: { id: 3, name: '顧客プロフィール情報', to: 'member', active: false, disabled: true  },
-      4: { id: 4, name: 'トレーニングメニュー', to: 'training', active: false, disabled: false  },
+      3: { id: 3, name: 'パーソナルデータ', to: 'member', active: false, disabled: true  },
+      4: { id: 4, name: 'トレーニング', to: 'training', active: false, disabled: false  },
     },
     breadcrumbs: [
     {

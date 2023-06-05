@@ -4,13 +4,20 @@
       <v-row>
         <v-col cols="12">
           <v-card flat rounded="lg">
-            <v-card-title>
-              <v-row>
-                <v-col cols="11">
+            <v-card-title class="px-1">
+              <v-row no-gutters>
+                <v-col
+                  cols="10"
+                  sm="11"
+                >
                   <div class="text-h6 font-weight-bold test">カテゴリー</div>
                 </v-col>
 
-                <v-col cols="1">
+                <v-col
+                  cols="2"
+                  sm="1"
+                  class="text-right"
+                >
                   <v-btn
                     icon
                     outlined
@@ -23,12 +30,13 @@
               </v-row>
             </v-card-title>
 
-            <v-card-text>
+            <v-card-text class="px-1">
               <v-row>
                 <v-col
                   v-for="category in categories"
                   :key="`category-${category.id}`"
-                  cols="4"
+                  cols="6"
+                  sm="4"
                   md="3"
                   lg="2"
                 >
@@ -50,13 +58,19 @@
 
         <v-col cols="12">
           <v-card flat rounded="lg">
-            <v-card-title>
-              <v-row>
-                <v-col cols="7">
+            <v-card-title class="px-1">
+              <v-row no-gutters>
+                <v-col
+                  cols="5"
+                  sm="7"
+                >
                   <div class="text-h6 font-weight-bold test">メニュー</div>
                 </v-col>
 
-                <v-col cols="4">
+                <v-col
+                  cols="5"
+                  sm="4"
+                >
                   <v-select
                     v-model="selectedCategory"
                     :items="categories"
@@ -70,7 +84,11 @@
                   ></v-select>
                 </v-col>
 
-                <v-col cols="1">
+                <v-col
+                  cols="2"
+                  sm="1"
+                  class="text-right"
+                >
                   <v-btn
                     icon
                     outlined
@@ -83,12 +101,13 @@
               </v-row>
             </v-card-title>
 
-            <v-card-text>
+            <v-card-text class="px-1">
               <v-row>
                 <v-col
                   v-for="menu in currentMenus"
                   :key="`menu-${menu.id}`"
-                  cols="4"
+                  cols="6"
+                  sm="4"
                   md="3"
                   lg="2"
                 >
