@@ -101,12 +101,12 @@ export default {
     {
         text: 'メニュー',
         disabled: false,
-        href: '/gyms/1/menu',
+        href: '/emr_sample/gyms/1/menu',
       },
       {
         text: '設定',
         disabled: true,
-        href: '/gyms/1/settings/gym',
+        href: '/emr_sample/gyms/1/settings/training',
       },
     ],
   }),

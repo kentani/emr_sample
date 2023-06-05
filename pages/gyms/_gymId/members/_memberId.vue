@@ -60,17 +60,17 @@ export default {
       {
         text: 'メニュー',
         disabled: false,
-        href: '/gyms/1/menu',
+        href: '/emr_sample/gyms/1/menu',
       },
       {
         text: '顧客一覧',
         disabled: false,
-        href: '/gyms/1/members',
+        href: '/emr_sample/gyms/1/members',
       },
       {
         text: '顧客 太郎',
         disabled: true,
-        href: '/gyms/1/members/1',
+        href: '/emr_sample/gyms/1/members/1',
       },
     ],
   }),

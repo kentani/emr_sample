@@ -41,10 +41,7 @@
       </v-col>
 
       <v-col cols="12" sm="8" md="9">
-        <transition-group
-          tag="v-row"
-          name="list"
-        >
+        <v-row>
           <v-col
             v-for="member in members"
             :key="member.id"
@@ -75,7 +72,7 @@
               </v-card-text>
             </v-card>
           </v-col>
-        </transition-group>
+        </v-row>
       </v-col>
     </v-row>
   </v-container>
